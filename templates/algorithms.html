@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Text Summariser</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1 class="display-4">Text Summariser</h1>
+    <p class="lead">Have tons of text to read and short of time? Then you have come to the right place. Summarise text as per need and save plenty of time and effort.</p>
+    <hr class="my-4">
+    <p>Click the button below to see algorithms in action.</p>
+    <a class="btn btn-primary btn-lg" href="{{url_for('index')}}" role="button">Go back</a>
+  </div>
+
+  <!-- Main content -->
+  <div style="margin:70px;" class="text-monospace">
+    <div class="row">
+	  <div class="accordion" id="accordionExample">
+	  	<div class="card">
+	    	<div class="card-header" id="headingOne">
+	      		<h2 class="mb-0">
+	        	<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	          	Collapsible Group Item #1
+	        	</button>
+	      		</h2>
+	    	</div>
+
+	    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+	      <div class="card-body">
+	        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-header" id="headingTwo">
+	      <h2 class="mb-0">
+	        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	          Collapsible Group Item #2
+	        </button>
+	      </h2>
+	    </div>
+	    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+	      <div class="card-body">
+	        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-header" id="headingThree">
+	      <h2 class="mb-0">
+	        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	          Collapsible Group Item #3
+	        </button>
+	      </h2>
+	    </div>
+	    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+	      <div class="card-body">
+	        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+    </div>  
+  </div>
+
+  <!-- Footer -->
+    <footer>
+       <div class="container-fluid bg-primary py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+              <div class="row py-0">
+            <div class="col-sm-1 hidden-md-down">
+                <a class="bg-circle bg-info" href="#">
+                  <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
+                </a>
+              </div>
+              <div class="col-sm-11 text-white">
+                  <div><h4>  Contact</h4>
+                      <p>   <span class="header-font">M</span>y<span class="header-font">w</span>website.com</p>
+                  </div>
+              </div>
+              </div>
+          </div>
+          <div class="col-md-5">
+            <div class="d-inline-block">
+              <div class="bg-circle-outline d-inline-block" style="background-color:#3b5998">
+                <a href="https://www.facebook.com/"><i class="fa fa-2x fa-fw fa-facebook text-white"></i></a>
+              </div>
+              <div class="bg-circle-outline d-inline-block" style="background-color:#4099FF">
+                <a href="https://twitter.com/">
+                  <i class="fa fa-2x fa-fw fa-twitter text-white"></i></a>
+              </div>
+
+              <div class="bg-circle-outline d-inline-block" style="background-color:#0077B5">
+                <a href="https://www.linkedin.com/company/">
+                  <i class="fa fa-2x fa-fw fa-linkedin text-white"></i></a>
+              </div>
+              <div class="bg-circle-outline d-inline-block" style="background-color:#d34836">
+                <a href="https://www.google.com/">
+                  <i class="fa fa-2x fa-fw fa-google text-white"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </footer>
+      <!--/.footer-->
+  <p class="text-center" style="color:white;"> Copyright © My website. All right reserved. </p>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
