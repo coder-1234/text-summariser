@@ -1,4 +1,5 @@
 import os
+import textrank
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 def select_algo(data,algo,filename=""):
@@ -7,7 +8,7 @@ def select_algo(data,algo,filename=""):
 		data=f.read()
 
 	if algo=='textrank':
-		pass
+		textrank.generate_summary(filename)
 	elif algo=='bla':
 		pass
 	else: 
