@@ -45,12 +45,14 @@ def build_similarity_matrix(sentences, stop_words):
     return similarity_matrix
 
 
-def generate_summary(file_name, top_n=5):
+def generate_summary(file_name, data, top_n=5):
     stop_words = stopwords.words('english')
     summarize_text = []
-    file = open(file_name, "r")
-    filedata = file.readlines()
-    print(filedata)
+    if file_name is not None:
+        file = open(file_name, "r")
+        filedata = file.readlines()
+    else:
+        filedata = data
     # Step 1 - tokenization
     sentences=sent_tokenize(str(filedata))
 
@@ -64,12 +66,10 @@ def generate_summary(file_name, top_n=5):
     # Step 4 - Sort the rank and pick top sentences
     ranked_sentence = sorted(((scores[i],s) for i,s in enumerate(sentences)), reverse=True)    
     print("Indexes of top ranked_sentence order are ", ranked_sentence)    
-
+    if top_n > len(sentences):
+        top_n = len(sentences)
     for i in range(top_n):
       summarize_text.append("".join(ranked_sentence[i][1]))
 
     # Step 5 - Output the summarized text
-    print("Summarize Text: \n", " ".join(summarize_text))
-
-# let's begin
-generate_summary( "/content/sample_data/msft.txt", 3)
+    return (" ".join(summarize_text))

@@ -25,9 +25,9 @@
         
       </div>
       <div class="col-12 col-md-5 my-form" style="margin-right:20px; border: solid red;">
-        {{form.hidden_tag()}}
         <h4 class="text-center">ENTER DETAILS</h4>
-        <form>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
           <!-- Name -->
           <div class="form-group">
             {{form.name.label(class_='label')}}<br>
@@ -36,8 +36,8 @@
           <br>
           <!-- Algo -->
           <div class="form-group">
-            {{form.algo.label(class_='label')}}<br>
-            {{form.algo(class_='form-control')}}
+            {{form.select.label(class_='label')}}<br>
+            {{form.select(class_='form-control')}}
           </div><br>
           <!-- Textarea -->
           <div class="form-group">
@@ -51,16 +51,33 @@
             {{form.file.label(class_='label')}}<br>
             {{form.file(class_='form-control')}}
           </div><br>
+          <div class="form-group">
+            {{form.sentences.label(class_='label')}}<br>
+            {{form.sentences(class_='form-control')}}
+          </div><br>
+          {% for message in form.file.errors %}
+          <div style="color:red;">{{message}}</div>
+          {% endfor %}
+          {% for message in form.sentences.errors %}
+          <div style="color:red;">{{message}}</div>
+          {% endfor %}
            <div class="form-group">
-            <button class="btn btn-info btn-rounded">{{form.submit(class_='subm')}}</button>
+            <button class="btn btn-info btn-rounded" type="submit">{{form.submit(class_='subm')}}</button>
           </div>
         </form>
       </div>
 
       <div class="col-12 col-md-5 my-result" style="border: solid red;">
-        <div>
-          Presenting to you{{summary}}
-        </div>
+        {% if ans != "": %}
+          <div>
+            <h2>Here's your summary</h2><br>{{ans}}
+          </div>
+        {% endif %}
+        {% if ans == "": %}
+          <div>
+            <h2>Submit to get summary</h2><br>
+          </div>
+        {% endif %}
       </div>
 
     </div>  
