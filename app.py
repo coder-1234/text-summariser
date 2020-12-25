@@ -13,7 +13,7 @@ UPLOADED_FILES_DEST = os.path.join(basedir,'static','uploads')
 algo_choices = [('1','Textrank'),('2','KLSum'),('3','Latent Semantic analysis')]
 class InputForm(FlaskForm):
 	name = TextField("Enter your name",[validators.Required("Please enter your name")])
-	select = SelectField("Select desired algorithm",choices=algo_choices)
+	select = SelectField("Select algorithm (Choose randomly if you are unaware of these)",choices=algo_choices)
 	text = TextAreaField("Enter text here",render_kw={"rows": 20, "cols": 80})
 	file = FileField("Choose desired txt file",validators=[FileAllowed(['txt'],'Only txt files are allowed')])
 	sentences = IntegerField('Enter lines of summary')
@@ -36,7 +36,7 @@ def index():
 				f = form.file.data
 				f.save(os.path.join(UPLOADED_FILES_DEST, f.filename))
 				ans = select_algo(algo,form.sentences.data,filename=f.filename)
-				f.remove(os.path.join(UPLOADED_FILES_DEST, f.filename))
+				os.remove(os.path.join(UPLOADED_FILES_DEST, f.filename))
 
 			return render_template('index.html',form=form,ans=ans)
 		else: return render_template('index.html',form=form,ans="")
